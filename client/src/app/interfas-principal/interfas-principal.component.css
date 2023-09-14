@@ -1,0 +1,269 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+#cuerpo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #111;
+    position: relative;
+    left: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nombresdeusuario li{
+    display: flex;
+    margin-left: 50px;
+}
+.video-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10%;
+    color: #fff;
+}
+.usuario {
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .user-menu-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    list-style: none;
+    background-color: #222020;
+    color: white;
+    border-bottom: 1px solid #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-menu.open {
+    display: block;
+  }
+  
+  .usuario i {
+    display: block;
+    width: 25px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f9f9f9;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    margin-right: 5px;
+  }
+  
+  .usuario:hover .dropdown-menu {
+    display: block;
+  }
+  
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222020;
+    color: white;
+    width: 100%;
+    height: 50px;
+}
+nav input{
+    width: 350px;
+    border: none;
+    padding-top: 11px;
+    padding-bottom: 9px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 20px;
+    background: #111; /* Añade el color de fondo deseado aquí */
+    margin-left: 26px;
+    color: white;
+}
+nav img{
+    width: 100px;
+    height: 100px;
+    margin-left: 150px;
+}
+.usuario{
+    color: #111;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ng-template li {
+    display: flex;
+    margin-left: 100px;
+    
+}
+  .usuario:hover .dropdown-menu {
+    display: block;
+  }
+  
+.video-container {
+  max-width: 640px;
+  margin-bottom: 30px;
+}
+header{
+    width: 100%;
+    height: 80px;
+    background:#222020 ;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.icon__menu{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(230px);
+}
+
+.icon__menu i{
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.menu__side{
+    width: 80px;
+    height: 100%;
+    background: #222020;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 18px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid #222020;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/*Ocultar scroll para chrome, safari y opera*/
+.menu__side::-webkit-scrollbar{
+    display: none;
+}
+
+/*Ocultar scroll para IE, Edge y Firefox*/
+.menu__side{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.svg{
+    color: red;
+}
+.name__page{
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.name__page i{
+    width: 25px;
+    margin-right: 20px;
+    color: red;
+    background-color: white;
+    font-size: 20px;
+}
+
+.options__menu{
+    padding: 20px 30px;
+    position: absolute;
+    top: 80px;
+}
+
+.options__menu a{
+    color: #ffffffb2;
+    cursor: default;
+    display: block;
+    position: relative;
+    transition: color 300ms;
+}
+
+.options__menu a:hover{
+    color: white;
+}
+
+.options__menu .option{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.options__menu .option i{
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.options__menu .option h4{
+    font-weight: 300;
+    cursor: pointer;
+}
+
+a.selected{
+    color: #fff;
+}
+
+.selected:before{
+    content: '';
+    width: 3px;
+    height: 80%;
+    background: white;
+    position: absolute;
+    top: 10%;
+    left: -30px;
+}
+
+/*Clases para usar en JavaScript*/
+
+.body_move{
+    margin-left: 250px;
+}
+
+.menu__side_move{
+    width: 250px;
+}
+
+
+@media screen and (max-width: 760px){
+    .body_move{
+        margin-left: 0px;
+    }
+    header{
+        width: 80px;
+        left: -80px;
+    }
+
+    .menu__side_move{
+        width: 80px;
+        left: -80px;
+    }
+}

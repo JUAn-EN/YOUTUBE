@@ -1,0 +1,77 @@
+<header>
+  <nav>
+    <div class="icon__menu">
+      <i id="btn_open" (click)="openCloseMenu()" class="fa-solid fa-bars"></i>
+    </div>
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/018/930/572/non_2x/youtube-logo-youtube-icon-transparent-free-png.png"
+      alt="icono"
+    />
+    <br />
+    <ng-container>
+      <input
+        type="text"
+        placeholder="Buscar"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="searchVideos()"
+      />
+      <i class="fa-regular fa-bell"></i>
+      <i>{{ userEmail }}</i>
+    </ng-container>
+    <ng-template #userMenuOptions>
+      <i>{{ userEmail }}</i>
+      <ul class="dropdown-menu" *ngIf="isDropdownOpen">
+        <li>{{ userName }}</li>
+        <li>{{ userEmail }}</li>
+        <li><a (click)="logout()">Cerrar Sesión</a></li>
+      </ul>
+    </ng-template>
+    <br />
+    <div class="usuario" (click)="toggleDropdown()">
+      <div *ngIf="!isUserLoggedIn; else userMenuOptions">
+        <a [routerLink]="['/login']">Iniciar</a>
+      </div>
+    </div>
+  </nav>
+</header>
+  <div id="menu_side" [ngClass]="{'menu__side_move': isMenuOpen}" class="menu__side" id="menu_side">
+  
+    <div class="name__page">
+        <i class="fa-brands fa-youtube"></i>
+        <h4>YouTube</h4>
+    </div>
+  
+    <div class="options__menu">	
+        <a href="#" class="selected">
+            <div class="option">
+                <i class="fas fa-home" title="Inicio"></i>
+                <h4>Inicio</h4>
+            </div>
+        </a>
+  
+        <a href="#">
+            <div class="option">
+                <i class="far fa-file" title="Portafolio"></i>
+                <h4>Portafolio</h4>
+            </div>
+        </a>
+        <a href="#">
+          <div class="option">
+            <ng-template #userMenuOptions>
+              <h4>{{ userName }}</h4>
+            </ng-template>
+          </div>
+ </a>
+    </div>
+  </div>
+  <div id="cuerpo">
+  <div *ngFor="let video of videos" class="video-container">
+    <h3>{{ video.snippet.title }}</h3>
+    <div *ngIf="video.id?.videoId">
+      <iframe [src]="getVideoEmbedUrl(video.id.videoId)" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <p>{{ video.snippet.description }}</p>
+    <p>Canal: {{ video.snippet.channelTitle }}</p>
+  </div>
+  </div>
+  

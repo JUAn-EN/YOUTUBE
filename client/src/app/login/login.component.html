@@ -1,0 +1,20 @@
+<!-- app-login.component.html -->
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()"  class="Formulario">
+    <div id="containerimgl">
+      <img class="img-logo"
+        src="https://static.vecteezy.com/system/resources/previews/018/930/572/non_2x/youtube-logo-youtube-icon-transparent-free-png.png"
+        alt="img y">
+      <h2>YouTube</h2>
+    </div>
+    <label for="email">Ingresa tu correo electrónico</label>
+    <input id="email" type="email" formControlName="correo_E" placeholder="Ingresa correo electrónico" name="email">
+    <br>
+    <label for="contraseña">Ingresa tu contraseña</label>
+    <input id="contraseña" type="password" formControlName="contraseña" placeholder="Ingresa contraseña" name="contraseña">
+    <div id="contenerdor-btns">
+      <button class="btn-registrate"  type="submit" >Registrate</button>
+      <button class="btn-registrate" [routerLink]="['/Interface']" >Inicio</button>
+    </div>
+  </form>
+</div>
